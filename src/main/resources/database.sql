@@ -50,12 +50,6 @@ ALTER TABLE `blog`
 ALTER TABLE `blog`
   MODIFY `id` bigint NOT NULL AUTO_INCREMENT;
 
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `alcalde`
---
-
 CREATE TABLE `alcalde` (
   `id` bigint NOT NULL,
   `titulo` varchar(255) COLLATE utf32_unicode_ci NOT NULL,
@@ -70,15 +64,9 @@ CREATE TABLE `alcalde` (
   `fecha_modificacion` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf32 COLLATE=utf32_unicode_ci;
 
---
--- Indices de la tabla `alcalde`
---
 ALTER TABLE `alcalde`
   ADD PRIMARY KEY (`id`);
 
---
--- AUTO_INCREMENT de la tabla `alcalde`
---
 ALTER TABLE `alcalde`
   MODIFY `id` bigint NOT NULL AUTO_INCREMENT;
 COMMIT;
