@@ -46,7 +46,7 @@ public class AlcaldeEntity {
 
     @NotNull
     @Size(min = 10)
-    private String resena;
+    private String reseña;
 
     @NotNull
     @Min(1)
@@ -61,7 +61,7 @@ public class AlcaldeEntity {
 
     @NotNull
     @Column(name = "fecha_lectura")
-    @JsonFormat(pattern = "dd-MM-yyyy", shape = JsonFormat.Shape.STRING)
+    @JsonFormat(pattern = "yyyy-MM-dd", shape = JsonFormat.Shape.STRING)
     private LocalDate fechaLectura;
 
     @NotNull

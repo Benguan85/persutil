@@ -90,7 +90,7 @@ public class AlcaldeService {
         existente.setTitulo(oEntidad.getTitulo());
         existente.setAutor(oEntidad.getAutor());
         existente.setGenero(oEntidad.getGenero());
-        existente.setResena(oEntidad.getResena());
+        existente.setReseña(oEntidad.getReseña());
         existente.setValoracion(oEntidad.getValoracion());
         existente.setPublicado(oEntidad.getPublicado());
         existente.setDestacado(oEntidad.getDestacado());
@@ -125,7 +125,7 @@ public class AlcaldeService {
             libro.setTitulo(obtenerAleatorio(titulos) + " #" + oAlcaldeRepository.count());
             libro.setAutor(obtenerAleatorio(autores));
             libro.setGenero(obtenerAleatorio(generos));
-            libro.setResena(generarResena());
+            libro.setReseña(generarResena());
             libro.setValoracion(random.nextInt(5) + 1);
             libro.setPublicado(random.nextBoolean());
             libro.setDestacado(random.nextInt(100) < 35);
