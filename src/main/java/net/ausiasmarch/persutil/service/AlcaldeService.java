@@ -1,7 +1,6 @@
 package net.ausiasmarch.persutil.service;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Random;
 
@@ -95,7 +94,6 @@ public class AlcaldeService {
         existente.setPublicado(oEntidad.getPublicado());
         existente.setDestacado(oEntidad.getDestacado());
         existente.setFechaLectura(oEntidad.getFechaLectura());
-        existente.setFechaModificacion(LocalDateTime.now());
         oAlcaldeRepository.save(existente);
         return existente.getId();
     }
@@ -141,8 +139,6 @@ public class AlcaldeService {
         entidad.setDestacado(entidad.getDestacado() != null ? entidad.getDestacado() : Boolean.FALSE);
         entidad.setValoracion(entidad.getValoracion() != null ? entidad.getValoracion() : 3);
         entidad.setFechaLectura(entidad.getFechaLectura() != null ? entidad.getFechaLectura() : LocalDate.now());
-        entidad.setFechaCreacion(LocalDateTime.now());
-        entidad.setFechaModificacion(null);
     }
 
     private String generarResena() {

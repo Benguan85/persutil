@@ -1,7 +1,6 @@
 package net.ausiasmarch.persutil.entity;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
@@ -63,13 +62,4 @@ public class AlcaldeEntity {
     @Column(name = "fecha_lectura")
     @JsonFormat(pattern = "yyyy-MM-dd", shape = JsonFormat.Shape.STRING)
     private LocalDate fechaLectura;
-
-    @NotNull
-    @Column(name = "fecha_creacion")
-    @JsonFormat(pattern = "dd-MM-yyyy HH:mm:ss", shape = JsonFormat.Shape.STRING)
-    private LocalDateTime fechaCreacion;
-
-    @Column(name = "fecha_modificacion")
-    @JsonFormat(pattern = "dd-MM-yyyy HH:mm:ss", shape = JsonFormat.Shape.STRING)
-    private LocalDateTime fechaModificacion;
 }

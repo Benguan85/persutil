@@ -59,9 +59,7 @@ CREATE TABLE `alcalde` (
   `valoracion` int NOT NULL,
   `publicado` tinyint(1) NOT NULL DEFAULT '1',
   `destacado` tinyint(1) NOT NULL DEFAULT '0',
-  `fecha_lectura` date NOT NULL,
-  `fecha_creacion` datetime NOT NULL,
-  `fecha_modificacion` datetime DEFAULT NULL
+  `fecha_lectura` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf32 COLLATE=utf32_unicode_ci;
 
 ALTER TABLE `alcalde`
