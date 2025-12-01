@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: database:3306
--- Tiempo de generación: 01-12-2025 a las 11:24:33
+-- Tiempo de generación: 01-12-2025 a las 11:30:48
 -- Versión del servidor: 8.4.5
 -- Versión de PHP: 8.2.28
 
@@ -158,6 +158,24 @@ CREATE TABLE `ideas` (
   `fecha_creacion` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `fecha_modificacion` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf32 COLLATE=utf32_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `jspreguntas`
+--
+
+CREATE TABLE `jspreguntas` (
+  `id` bigint NOT NULL,
+  `question` varchar(255) CHARACTER SET utf16 COLLATE utf16_unicode_ci NOT NULL,
+  `answer1` varchar(255) CHARACTER SET utf16 COLLATE utf16_unicode_ci NOT NULL,
+  `answer2` varchar(255) CHARACTER SET utf16 COLLATE utf16_unicode_ci NOT NULL,
+  `answer3` varchar(255) CHARACTER SET utf16 COLLATE utf16_unicode_ci NOT NULL,
+  `answer4` varchar(255) CHARACTER SET utf16 COLLATE utf16_unicode_ci NOT NULL,
+  `correct` tinyint NOT NULL,
+  `create_date` datetime NOT NULL,
+  `modify_date` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf16 COLLATE=utf16_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -326,6 +344,12 @@ ALTER TABLE `ideas`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indices de la tabla `jspreguntas`
+--
+ALTER TABLE `jspreguntas`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indices de la tabla `pallas`
 --
 ALTER TABLE `pallas`
@@ -427,6 +451,12 @@ ALTER TABLE `ideas`
   MODIFY `id` bigint NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT de la tabla `jspreguntas`
+--
+ALTER TABLE `jspreguntas`
+  MODIFY `id` bigint NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT de la tabla `pallas`
 --
 ALTER TABLE `pallas`
@@ -468,45 +498,3 @@ ALTER TABLE `tarea`
 ALTER TABLE `uski_libro_visita`
   MODIFY `id` bigint NOT NULL AUTO_INCREMENT;
 COMMIT;
-
-
--- ----------- ALAN ---------------------------------
-
-CREATE TABLE `jspreguntas` (
-  `id` bigint NOT NULL,
-  `question` varchar(255) COLLATE utf16_unicode_ci NOT NULL,
-  `answer1` varchar(255) COLLATE utf16_unicode_ci NOT NULL,
-  `answer2` varchar(255) COLLATE utf16_unicode_ci NOT NULL,
-  `answer3` varchar(255) COLLATE utf16_unicode_ci NOT NULL,
-  `answer4` varchar(255) COLLATE utf16_unicode_ci NOT NULL,
-  `correct` tinyint NOT NULL,
-  `create_date` datetime NOT NULL,
-  `modify_date` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf16 COLLATE=utf16_unicode_ci;
-
---
--- Índices para tablas volcadas
---
-
---
--- Indices de la tabla `jspreguntas`
---
-ALTER TABLE `jspreguntas`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT de las tablas volcadas
---
-
---
--- AUTO_INCREMENT de la tabla `jspreguntas`
---
-ALTER TABLE `jspreguntas`
-  MODIFY `id` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=119;
-COMMIT;
-
-
-
-
-
-
