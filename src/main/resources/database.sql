@@ -18,6 +18,23 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `sempertegui_pelicula`
+--
+
+CREATE TABLE `sempertegui_pelicula` (
+  `id` BIGINT NOT NULL AUTO_INCREMENT , 
+  `nombre` VARCHAR(255) NOT NULL , 
+  `genero` VARCHAR(255) NOT NULL , 
+  `director` VARCHAR(255) NOT NULL , 
+  `puntuacion` INT NOT NULL , 
+  `anyo` YEAR NOT NULL , 
+  `fecha_creacion` DATETIME NOT NULL , 
+  `fecha_modificacion` DATETIME DEFAULT NULL , 
+  PRIMARY KEY (`id`), 
+  UNIQUE `nombre` (`nombre`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf32 COLLATE=utf32_unicode_ci;
+
+--
 -- Estructura de tabla para la tabla `blog`
 --
 
@@ -30,6 +47,21 @@ CREATE TABLE `blog` (
   `fecha_modificacion` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf32 COLLATE=utf32_unicode_ci;
 
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `alfonso_respuesta`
+--
+
+CREATE TABLE `alfonso_respuesta` (
+  `id` bigint NOT NULL,
+  `autor` varchar(128) COLLATE utf32_unicode_ci NOT NULL,
+  `contenido` longtext COLLATE utf32_unicode_ci NOT NULL,
+  `publicado` tinyint(1) NOT NULL DEFAULT '1',
+  `fecha_creacion` datetime NOT NULL,
+  `fecha_modificacion` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf32 COLLATE=utf32_unicode_ci;
+
 --
 -- Índices para tablas volcadas
 --
@@ -38,6 +70,12 @@ CREATE TABLE `blog` (
 -- Indices de la tabla `blog`
 --
 ALTER TABLE `blog`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `alfonso_respuesta`
+--
+ALTER TABLE `alfonso_respuesta`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -66,5 +104,46 @@ ALTER TABLE `alcalde`
   ADD PRIMARY KEY (`id`);
 
 ALTER TABLE `alcalde`
+--
+-- AUTO_INCREMENT de la tabla `alfonso_respuesta`
+--
+ALTER TABLE `alfonso_respuesta`
   MODIFY `id` bigint NOT NULL AUTO_INCREMENT;
 COMMIT;
+
+
+-- Pollyanna --
+
+
+CREATE TABLE `soares` (
+  `id` bigint NOT NULL,
+  `preguntas` varchar(255) CHARACTER SET utf32 COLLATE utf32_unicode_ci NOT NULL,
+  `fecha_creacion` datetime NOT NULL,
+  `fecha_modificacion` datetime DEFAULT NULL,
+  `publicacion` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf32 COLLATE=utf32_unicode_ci;
+
+--
+-- Índices para tablas volcadas
+--
+
+--
+-- Indices de la tabla `soares`
+--
+ALTER TABLE `soares`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `soares`
+--
+ALTER TABLE `soares`
+  MODIFY `id` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3137;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
